@@ -1,0 +1,79 @@
+//Created by Eaint Thet Phoo Paing on 5/9/2022.
+//Third Assignment
+
+
+
+#include<stdio.h>
+#include<string.h>
+
+void doSomething(int *ptr);
+
+int main(){
+
+    int index=0;
+    int next=0;
+
+    char fArray[10]={'H','e','l','l','o',' '};
+    char sArray[10]={'L','E','A','N','E','R','S',' '};
+
+    char myString[100];
+
+
+   printf("Combine Character String Array Data: %s\n\n", strcat(fArray,sArray));
+
+    printf("This is First Array Section: \n\n");
+    char *ptr1;
+    ptr1=&fArray;
+
+    for(int j=0;fArray[j]!=' ';j++){
+
+
+            myString[j]=fArray[j];
+            index++;
+
+    }
+    printf("fArray data: %s \n",myString);
+    printf("Index number: %d \n\n",index);
+
+    printf("Address of Pointer of First Array: %x \n",ptr1);
+    printf("Value of Pointer of First Array: %d \n\n\n\n",*ptr1);
+
+
+
+    printf("This is Second Array Section: \n\n");
+    int *ptr2;
+    ptr2=&sArray;
+    char a='a';
+
+    for(int i=0;sArray[i]!=' ';i++){
+
+            myString[i]=sArray[i];
+            next=next+1;
+            index++;
+
+    }
+    printf("sArray data: %s \n",myString);
+    printf("sArray Index number: %d \n\n",next);
+
+
+    printf("*(ptr2+1) = %d \n", *(ptr2 + 1));
+    printf("*(ptr2+2)value = %d \n", *(ptr2 + 3));
+    printf("*(ptr2+2)address = %x \n", ptr2 + a);
+
+    doSomething(ptr2);
+    printf("Result of Second Array: %d\n\n\n", *ptr2 );
+
+
+
+    printf("Total Index number: %d \n",index);
+
+
+
+return 0;
+}
+
+void doSomething(int *ptr){
+
+    (*ptr)++;
+
+}
